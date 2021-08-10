@@ -1,0 +1,39 @@
+Adicionar nome no git= git config --global user.name "Seu nome"
+Adicionar email no git = git config --global user.email "seu@email"
+Adicionar o editor no git = git config --global core.editor editor
+Ver infos adicionadas no git= git config user.name
+Ver todas as infos = git config --list
+Iniciar repositorio = git init (dentro da pasta)
+Commitar = Salvar todas as alterações
+Commit = commit -m "descrição das alterações"
+Branch = versões do sistema, sendo branch master a principal versão
+README.md = arquivo leia, obrigatorio ter em todo sistema com instruções do mesmo(crir manualmente na pasta)
+Verificar itens da pasta e se existe alguma alteração para ser commitada ou revertida = git status
+Adicionar para ser rastreado (tracked) após cair no status = git add -A (todos os itens) git add nomeItem (item especifico)
+Ver Log de alterações no commit = git log
+Voltar commit = git reset --(soft,mixed,hard) codigoCommit
+	-soft -> Retorno o arquivo modificado, mas antes do commit (recomendado)
+	-mixed -> Retorna o arquivo modificado, mas antes do add
+	-hard -> Retorna o arquivos antes da modificação ou da criação
+Qual brach estamos = git branch
+Criando novo branch = git branch nomeBranch
+Trocando de branch = git checkout nomeBranch
+Ver todos os itens dos arquivos que foram alterados = git diff
+Ver aquivos qur foram alterados = git diff --name-only nomeArquivo
+Voltar alterações feitas e vistas no diff = git checkout HEAD -- nomeArquivo (HEAD = branch atual)
+============TRABALHANDO COM GIT HUB============
+Repositorio local -> GIT, está na maquina
+Repositorio remoto -> git hub, está na internet, pode ser acessado por mais de 1 pessoa, copia do que está local
+	Para transferir os arquivos é necessário a criaçã de uma chave SSH (existe tutorial para fazer: generate new SSH key). Copiar chave publica 	gerada e colar no github em setting, manter chave privada na maquina(é necessário uma nova chave adicionada para novas maquinas acessarem o 	repositorio)
+Subir projeto existente localmente para github = git remote add origin linkRepositorioGitHub
+Ver se deu certo o upload do repositorio para o github = git remote ou git remote -v
+Continuação para subir projeto = git push -u origin(destino github) master(branch que será enviado ao destino)
+Quando fizer uma alteração no projeto sempre commite, após isso dê um git push origin(destino github) master(branch que será enviado ao destino) para subir as alterações para o gitHub.
+Como ignorar/ocultar alguns itens ou pastas no commit e push = Criar arquivo nomeado .gitignore e dentro desse arquivo escrever os nomes dos arquivos ou pastas que desejar que sejam ignorados. OBS: Adicionar no .gitignore antes de usar o ADD
+Como reverter/voltar código commitado sem perder o código = git revert --no-edit CodigoCommit (Não ocorre perda de código, pois é criado um novo "commit")
+Remover/excluir/deletar branch gitHub/remoto = git push origin :NomeBranch
+Remover/excluir/deletar branch git/local = git branch -D nomeBranch
+Puxar alterações/arquivos feitas por outros devs e commitados no gitHub = git pull origin(de onde vem) master(pra qual branch vai)
+Clonar repositório remoto(gitHub) = git clone linkprojetoGitHub
+Ver em qual servidor remoto você está, pode não ser origin = git remote -v
+Para clonar um projeo que nãos eja seu é necessário fazer um fork no gitHub e logo apos um clone
